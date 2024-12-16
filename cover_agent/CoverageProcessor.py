@@ -97,7 +97,7 @@ class CoverageProcessor:
             else:
                 if self.coverage_type == "cobertura":
                     # Default behavior is to parse out a single file from the report
-                    return self.parse_coverage_report_cobertura(filename=os.path.basename(self.src_file_path))
+                    return self.parse_coverage_report_cobertura(filename=os.path.relpath(self.src_file_path))
                 elif self.coverage_type == "lcov":
                     return self.parse_coverage_report_lcov()
                 elif self.coverage_type == "jacoco":
